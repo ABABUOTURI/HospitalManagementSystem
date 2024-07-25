@@ -70,8 +70,8 @@ class _LoginPageState extends State<LoginPage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF5518FC),
-                  Color(0xFF5518FC).withOpacity(0.8),
+                  Color.fromARGB(255, 49, 58, 179),
+                  Color.fromARGB(255, 38, 72, 184).withOpacity(0.8),
                   Color(0xFF87CEEB),
                 ],
                 stops: [0.0, 0.8, 1.0],

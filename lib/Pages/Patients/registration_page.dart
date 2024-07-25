@@ -100,8 +100,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF5518FC),
-                  Color(0xFF5518FC).withOpacity(0.8), // 80% purple
+                  Color.fromARGB(255, 38, 118, 223),
+                  Color.fromARGB(255, 42, 116, 226).withOpacity(0.8), // 80% purple
                   Color(0xFF87CEEB), // Sky blue color
                 ],
                 stops: [0.0, 0.8, 1.0], // Set the percentage stops for the gradient
@@ -216,7 +216,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 style: TextStyle(color: Colors.white),
                               ),
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Color(0xFF5518FC), // Purple color
+                                backgroundColor: Color.fromARGB(255, 37, 94, 218), // Purple color
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 30, vertical: 15),
                                 textStyle: TextStyle(fontSize: 18),
