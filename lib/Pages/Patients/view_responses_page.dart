@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hospital_management_system/chat_page.dart';
 import 'package:intl/intl.dart';
 
+
 class ViewResponsesPage extends StatelessWidget {
-  // Sample data representing responses from doctors
   final List<Map<String, dynamic>> responses = [
     {
       'query': 'I have a headache that won\'t go away. What should I do?',
@@ -23,33 +23,7 @@ class ViewResponsesPage extends StatelessWidget {
       'specialization': 'Consultant Sleep Specialist',
       'hospital': 'General Hospital'
     },
-    {
-      'query': 'What can I do to improve my sleep quality?',
-      'queryTime': DateTime.now().subtract(Duration(days: 4, hours: 6)),
-      'response': 'Avoid caffeine and electronics before bedtime. Practice relaxation techniques.',
-      'responseTime': DateTime.now().subtract(Duration(days: 3, hours: 2)),
-      'doctorName': 'Dr. Emily Johnson',
-      'specialization': 'Consultant Sleep Specialist',
-      'hospital': 'KNRH Hospital'
-    },
-    {
-      'query': 'What can I do to improve my sleep quality?',
-      'queryTime': DateTime.now().subtract(Duration(days: 4, hours: 6)),
-      'response': 'Avoid caffeine and electronics before bedtime. Practice relaxation techniques.',
-      'responseTime': DateTime.now().subtract(Duration(days: 3, hours: 2)),
-      'doctorName': 'Dr. Emily Wanjiku',
-      'specialization': 'Consultant Sleep Specialist',
-      'hospital': 'Kabarak Hospital'
-    },
-    {
-      'query': 'What can I do to improve my sleep quality?',
-      'queryTime': DateTime.now().subtract(Duration(days: 4, hours: 6)),
-      'response': 'Avoid caffeine and electronics before bedtime. Practice relaxation techniques.',
-      'responseTime': DateTime.now().subtract(Duration(days: 3, hours: 2)),
-      'doctorName': 'Dr. Emmanuel Johnson',
-      'specialization': 'Consultant Sleep Specialist',
-      'hospital': 'Bahati Hospital'
-    },
+    // Additional responses can be added here
   ];
 
   @override
@@ -68,7 +42,7 @@ class ViewResponsesPage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color(0xFF5518FC), // App bar background color from login_page.dart
+        backgroundColor: Color(0xFF5518FC),
       ),
       body: Container(
         color: Colors.white,
@@ -155,11 +129,8 @@ class ViewResponsesPage extends StatelessWidget {
                             style: TextStyle(fontSize: 16),
                           ),
                           SizedBox(height: 10),
-                          // Message icon to initiate chat with the doctor
                           InkWell(
                             onTap: () {
-                              // Handle chat initiation with the doctor
-                              // This could navigate to a chat screen or open a messaging platform
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -186,7 +157,6 @@ class ViewResponsesPage extends StatelessWidget {
     );
   }
 }
-
 
 void main() {
   runApp(MaterialApp(
