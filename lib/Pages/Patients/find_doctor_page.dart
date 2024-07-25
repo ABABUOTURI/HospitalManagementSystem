@@ -6,7 +6,11 @@ class Doctor {
   final String specialization;
   final String hospital;
 
-  Doctor({required this.name, required this.specialization, required this.hospital});
+  Doctor({
+    required this.name,
+    required this.specialization,
+    required this.hospital,
+  });
 }
 
 class FindDoctorPage extends StatefulWidget {
@@ -54,7 +58,7 @@ class _FindDoctorPageState extends State<FindDoctorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
@@ -66,7 +70,7 @@ class _FindDoctorPageState extends State<FindDoctorPage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color(0xFF5518FC), // App bar background color from login_page.dart
+        backgroundColor: Color(0xFF5518FC),
       ),
       body: Container(
         color: Colors.white,

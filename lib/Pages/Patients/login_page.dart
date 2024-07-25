@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
             title: Text('Select User Type'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 TextButton(
                   onPressed: () {
@@ -53,16 +52,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _redirectUser(UserType userType) {
-  // Simulate redirecting user based on selected userType
-  if (userType == UserType.Patient) {
-    Navigator.pushNamed(context, '/patientdashboard');
-  } else if (userType == UserType.Doctor) {
-    Navigator.pushNamed(context, '/doctorsdashboard');
-  } else if (userType == UserType.Admin) {
-    Navigator.pushNamed(context, '/admindashboard');
+    if (userType == UserType.Patient) {
+      Navigator.pushNamed(context, '/patientdashboard');
+    } else if (userType == UserType.Doctor) {
+      Navigator.pushNamed(context, '/doctorsdashboard');
+    } else if (userType == UserType.Admin) {
+      Navigator.pushNamed(context, '/admindashboard');
+    }
   }
-}
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,10 +71,10 @@ class _LoginPageState extends State<LoginPage> {
               gradient: LinearGradient(
                 colors: [
                   Color(0xFF5518FC),
-                  Color(0xFF5518FC).withOpacity(0.8), // 80% purple
-                  Color(0xFF87CEEB), // Sky blue color
+                  Color(0xFF5518FC).withOpacity(0.8),
+                  Color(0xFF87CEEB),
                 ],
-                stops: [0.0, 0.8, 1.0], // Set the percentage stops for the gradient
+                stops: [0.0, 0.8, 1.0],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -91,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(
-                      Icons.vpn_key, // Changed to VPN Key icon
+                      Icons.vpn_key,
                       size: 70,
                       color: Colors.white,
                     ),
@@ -157,10 +154,10 @@ class _LoginPageState extends State<LoginPage> {
                                 onPressed: () => _login(context),
                                 child: Text(
                                   'Login',
-                                  style: TextStyle(color: Colors.white), // Text color to white
+                                  style: TextStyle(color: Colors.white),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF5518FC), // Background color as #5518FC
+                                  backgroundColor: Color(0xFF5518FC),
                                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                                   textStyle: TextStyle(fontSize: 20),
                                 ),
@@ -170,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                                 onPressed: () {
                                   Navigator.pushNamed(context, '/registrationpage');
                                 },
-                                child: Text("Don't have Account? Register"),
+                                child: Text("Don't have an Account? Register"),
                               ),
                             ],
                           ),

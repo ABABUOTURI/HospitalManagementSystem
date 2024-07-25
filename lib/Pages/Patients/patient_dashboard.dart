@@ -5,18 +5,65 @@ class PatientDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        title: Text(
+          'Patient Dashboard',
+          style: TextStyle(color: Colors.white),
         ),
-        title: Text('Patient Dashboard',
-        style: TextStyle(
-                        color: Colors.white,
-                      ),
+        backgroundColor: Color(0xFF5518FC),
       ),
-      backgroundColor: Color(0xFF5518FC),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFF5518FC),
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.search),
+              title: Text('Find Doctor'),
+              onTap: () {
+                Navigator.pushNamed(context, '/finddoctorpage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('Submit Query'),
+              onTap: () {
+                Navigator.pushNamed(context, '/submitquerypage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('View Responses'),
+              onTap: () {
+                Navigator.pushNamed(context, '/viewresponsespage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile Information'),
+              onTap: () {
+                Navigator.pushNamed(context, '/profilepage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pushNamed(context, '/settingspage');
+              },
+            ),
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -42,7 +89,7 @@ class PatientDashboard extends StatelessWidget {
             DashboardItem(
               title: 'View Responses',
               icon: Icons.message,
-              isNew: true, // Example: Highlight this card
+              isNew: true,
               onTap: () {
                 Navigator.pushNamed(context, '/viewresponsespage');
               },
@@ -54,14 +101,6 @@ class PatientDashboard extends StatelessWidget {
                 Navigator.pushNamed(context, '/profilepage');
               },
             ),
-            /*DashboardItem(
-              title: 'Notifications',
-              icon: Icons.notifications,
-              isNew: true, // Example: Highlight this card
-              onTap: () {
-                // Navigate to Notifications page
-              },
-            ),*/
             DashboardItem(
               title: 'Settings',
               icon: Icons.settings,
@@ -105,7 +144,7 @@ class DashboardItem extends StatelessWidget {
             if (isNew) ...[
               SizedBox(height: 5),
               Text(
-                '1',
+                'New',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -118,4 +157,3 @@ class DashboardItem extends StatelessWidget {
     );
   }
 }
-
