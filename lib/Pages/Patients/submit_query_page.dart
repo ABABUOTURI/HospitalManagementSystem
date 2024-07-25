@@ -28,7 +28,6 @@ class _SubmitQueryPageState extends State<SubmitQueryPage> {
               child: Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
-                // Optionally, clear the form or navigate away
                 _queryController.clear();
               },
             ),
@@ -42,18 +41,17 @@ class _SubmitQueryPageState extends State<SubmitQueryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Submit Query',
-         style: TextStyle(
-                        color: Colors.white,
-                      ),
+        title: Text(
+          'Submit Query',
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFF5518FC), // App bar background color from login_page.dart
+        backgroundColor: Color(0xFF5518FC),
       ),
       body: Container(
         color: Colors.white,
@@ -94,7 +92,7 @@ class _SubmitQueryPageState extends State<SubmitQueryPage> {
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF5518FC), // Button color from login_page.dart
+                  backgroundColor: Color(0xFF5518FC),
                   padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   textStyle: TextStyle(fontSize: 18),
                 ),
