@@ -10,67 +10,70 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF5518FC),
-                  Color(0xFF5518FC).withOpacity(0.8), // 80% purple
-                  Color(0xFF87CEEB), // Sky blue color
+                  Color(0xFF87CEEB),
+                  Color.fromARGB(255, 37, 50, 223).withOpacity(0.8),
+                  Color.fromARGB(255, 48, 46, 199),
                 ],
-                stops: [0.0, 0.8, 1.0], // Set the percentage stops for the gradient
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                stops: [0.0, 0.5, 1.0],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(
                     Icons.local_hospital,
-                    size: 100,
+                    size: 120,
                     color: Colors.white,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 30),
                   Text(
-                    'Welcome To HMS!!!',
+                    'Welcome to Health Connect!',
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black38,
+                          offset: Offset(2.0, 2.0),
+                        ),
+                      ],
                     ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Helping you connect with doctors effortlessly',
+                    'Effortlessly connect with healthcare professionals.\nYour health is our priority.',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    'Your Health is Your Treasure',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
+                      color: Colors.white70,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/loginpage'); // Navigate to Login Page
+                      Navigator.pushNamed(context, '/loginpage');
                     },
                     child: Text(
                       'Get Started',
-                      style: TextStyle(color: Colors.white), // Text color to white
+                      style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 139, 175, 7), // Button color
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                      textStyle: TextStyle(fontSize: 20),
+                      backgroundColor: Colors.teal,
+                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      textStyle: TextStyle(fontSize: 22),
+                      elevation: 8.0,
                     ),
                   ),
                 ],
